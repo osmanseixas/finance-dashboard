@@ -1,3 +1,5 @@
+import { FaCircleUser } from "react-icons/fa6";
+import { RiMoneyDollarBoxLine } from "react-icons/ri";
 import styled from "styled-components";
 
 const HeaderContainer = styled.div`
@@ -10,8 +12,10 @@ const HeaderContainer = styled.div`
 export default function Header() {
   return (
     <HeaderContainer>
-      <h2>Finance Tracker</h2>
-      <span>👤 User</span>
+      <RiMoneyDollarBoxLine className="custom-icon"/>
+      <h2>Controle Financeiro</h2>
+      <FaCircleUser className="custom-icon-link"/>
+      <span>Osman</span>
     </HeaderContainer>
   );
 }

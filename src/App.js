@@ -3,6 +3,8 @@ import Dashboard from "./pages/Dashboard";
 import Transactions from "./pages/Transactions";
 import styled from "styled-components";
 import Sidebar from "./components/Sidebar";
+import Categories from "./pages/Categories";
+import Configurations from "./pages/Configurations";
 
 const AppContainer = styled.div`
   display: flex;
@@ -16,7 +18,9 @@ function App() {
       <Sidebar />
         <Routes>
           <Route exact path="/" element={<Dashboard />} />
-          <Route path="/transactions" element={<Transactions />} />
+          <Route path="/transacoes" element={<Transactions />} />
+          <Route path="/categorias" element={<Categories />} />
+          <Route path="/configuracoes" element={<Configurations />} />
         </Routes>
       </AppContainer>
     </Router>

@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import Header from "../components/Header";
-import Sidebar from "../components/Sidebar";
 import Card from "../components/Card";
 import TransactionsTable from "../components/TransactionsTable";
 import PieChartComponent from "../components/PieChartComponent";
@@ -21,9 +20,9 @@ export default function Dashboard() {
     <Container>
       <Content>
         <Header />
-        <Card title="Saldo" amount="2.000,00" bg="#27ae60" color="white" />
-        <Card title="Receitas" amount="3.000,00" bg="green" color="white" />
-        <Card title="Despesas" amount="4.500,00" bg="red" color="white" />
+        <Card titulo="Saldo" valor={2000} corFundo="gold" corLetra="black" />
+        <Card titulo="Receitas" valor={3000.5} corFundo="green" corLetra="white" />
+        <Card titulo="Despesas" valor={4500.87} corFundo="red" corLetra="white" />
         <PieChartComponent />
         <BarChartComponent />
         <TransactionsTable />

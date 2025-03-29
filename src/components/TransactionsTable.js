@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { formatCurrency, formatDate, getAmountColor } from "../utils/format";
 
 const Table = styled.table`
   width: 100%;
@@ -21,9 +22,9 @@ const Td = styled.td`
 
 export default function TransactionsTable() {
   const transactions = [
-    { date: "20/03/2025", description: "Aluguel", category: "Habitação", amount: -1200 },
-    { date: "18/03/2025", description: "Supermercado", category: "Alimentação", amount: -150 },
-    { date: "15/03/2025", description: "Salário", category: "Receita", amount: 5000 }
+    { date: "20250320", description: "Aluguel", category: "Habitação", amount: -1200 },
+    { date: "20250318", description: "Supermercado", category: "Alimentação", amount: -150 },
+    { date: "20250315", description: "Salário", category: "Receita", amount: 5000 }
   ];
 
   return (
@@ -39,10 +40,10 @@ export default function TransactionsTable() {
       <tbody>
         {transactions.map((t, index) => (
           <tr key={index}>
-            <Td>{t.date}</Td>
+            <Td>{formatDate(t.date)}</Td>
             <Td>{t.description}</Td>
             <Td>{t.category}</Td>
-            <Td negative={t.amount < 0}>${t.amount}</Td>
+            <Td style={{ color: getAmountColor(t.amount) }}>{formatCurrency(t.amount)}</Td>
           </tr>
         ))}
       </tbody>

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { formatCurrency } from "../utils/format";
 
 const CardContainer = styled.div`
   background: ${(props) => props.bg || "#fff"};
@@ -9,11 +10,11 @@ const CardContainer = styled.div`
   text-align: center;
 `;
 
-export default function Card({ title, amount, bg, color }) {
+export default function Card({ titulo, valor, corFundo, corLetra }) {
   return (
-    <CardContainer bg={bg} color={color}>
-      <h3>{title}</h3>
-      <h2>${amount}</h2>
+    <CardContainer bg={corFundo} color={corLetra}>
+      <h3>{titulo}</h3>
+      <h2>{formatCurrency(valor)}</h2>
     </CardContainer>
   );
 }
