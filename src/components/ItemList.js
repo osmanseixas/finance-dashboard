@@ -127,12 +127,7 @@ export default function ItemList() {
               onChange={(option) => setSelectedIcone(option.value)}
               className="icon-select"
             />
-            <input
-              type="text"
-              placeholder="Digite uma nova cor..."
-              value={newCor}
-              onChange={(e) => setNewCor(e.target.value)}
-            />
+            <input type="color" value={newCor} onChange={(e) => setNewCor(e.target.value)} />
             <button onClick={handleAddItem}>Adicionar</button>
           </div>
           <ul className="item-list">
@@ -153,11 +148,7 @@ export default function ItemList() {
                       onChange={(option) => setEditedIcone(option.value)}
                       className="icon-select"
                     />
-                    <input
-                      type="text"
-                      value={editedCor}
-                      onChange={(e) => setEditedCor(e.target.value)}
-                    />
+                    <input type="color" value={editedCor} onChange={(e) => setEditedCor(e.target.value)} />
                     <button onClick={handleSaveEdit} className="save">
                       <FaSave />
                     </button>
