@@ -1,7 +1,9 @@
+import ItemList from "../components/ItemList";
+
 export default function Categories() {
     return (
       <div>
-          Lista de categorias
+          <ItemList />
       </div>
     );
   }
